@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muse - Magic Writing Partner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafafa;
+        }
+        .editor-font {
+            font-family: 'Lora', serif;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            line-height: 2;
+            padding: 0;
+            margin: 0;
+        }
+        [contenteditable] {
+            outline: none;
+        }
+        /* Ensure both layers handle paragraphs identically */
+        .real-editor p, .highlight-layer p,
+        .real-editor div, .highlight-layer div {
+            margin: 0 0 1.5rem 0;
+            min-height: 1em;
+        }
+        
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Dual Layer Editor Logic */
+        .real-editor {
+            color: transparent !important;
+            caret-color: #18181b; /* zinc-900 */
+            z-index: 10;
+        }
+        .highlight-layer {
+            color: #18181b; /* Actual text color */
+            z-index: 1;
+        }
+
+        /* Suggestion Highlighting - Creative */
+        .suggestion-highlight {
+            border-bottom: 2px dotted #6366f1;
+            background-color: rgba(99, 102, 241, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+            pointer-events: auto;
+        }
+
+        /* Grammar Highlighting - Technical */
+        .grammar-highlight {
+            border-bottom: 2px dotted #ef4444;
+            background-color: rgba(239, 68, 68, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 2px;
+            pointer-events: auto;
+        }
+        
+        /* Markdown Styles for Highlight Layer */
+        .md-bold { font-weight: 700; color: #4f46e5; }
+        .md-italic { font-style: italic; color: #52525b; }
+        /* Headers should NOT use display: block to keep layers aligned */
+        .md-h3 { font-size: 1.5rem; font-weight: 700; line-height: 1.2; color: #18181b; }
+        .md-h2 { font-size: 1.8rem; font-weight: 700; line-height: 1.2; color: #18181b; }
+        .md-h1 { font-size: 2.2rem; font-weight: 700; line-height: 1.2; color: #18181b; }
+        .md-parenthesis { font-size: 0.85em; opacity: 0.45; font-weight: 400; font-style: normal; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="text-zinc-900 selection:bg-indigo-100 selection:text-indigo-900">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
