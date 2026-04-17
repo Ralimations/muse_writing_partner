@@ -1,20 +1,40 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Muse Writing Partner
 
-# Run and deploy your AI Studio app
+Muse Writing Partner is a guided writing and ideation app built to support creative workflows through an interface-driven AI-assisted experience.
 
-This contains everything you need to run your app locally.
+## Stack
 
-View your app in AI Studio: https://ai.studio/apps/drive/1HOvlJjR4jy_LqvTrKdc0AfT07wg6kRDK
+- React
+- TypeScript
+- Vite
+- Gemini API integration
 
-## Run Locally
+## Focus
 
-**Prerequisites:**  Node.js
+- Writing support and ideation flows
+- AI-assisted creative interaction
+- Interface-led prompting and refinement
+- Lightweight front-end experimentation around creative tools
 
+## Development
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+Prerequisites:
+
+- Node.js
+
+Run locally:
+
+```bash
+npm install
+npm run dev
+```
+
+Build:
+
+```bash
+npm run build
+```
+
+## Notes
+
+This project is being preserved as part of a broader portfolio of AI-assisted front-end experiments and tool-like product concepts.
